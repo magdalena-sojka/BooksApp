@@ -24,7 +24,7 @@
   };
 
   class Books {
-    constructor() {
+    constructor(){
       const thisBook = this;
       thisBook.getElements();
       thisBook.render();
@@ -36,13 +36,13 @@
       //console.log('This Book: ', thisBook);
     }
 
-    getElements() {
+    getElements(){
       const thisBook = this;
       thisBook.dom = {};
       thisBook.dom.wrapper = document.querySelector(select.containerOf.books);
     }
 
-    render() {
+    render(){
       const thisBook = this;
       for (let book of dataSource.books) {
         const ratingBgc = thisBook.determineRatingBgc(book.rating);
@@ -126,7 +126,6 @@
     }
 
     determineRatingBgc(rating){
-      
       let background = '';
       if (rating < 6){
         background = 'linear-gradient(to bottom,  #fefcea 0%, #f1da36 100%)';
@@ -140,5 +139,6 @@
       return background;
     }
   }
-  new Books();
+  const app = new Books();
+  console.log('app', app);
 }
